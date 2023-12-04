@@ -9,21 +9,21 @@
             <div class="col s12 m12 14">
                 <div class="card-panel">
                     <h6>Total Budget</h6>
-                    <h1>£200</h1>
+                    <h1>£{{ project.budget  }}</h1>
                 </div>
             </div>
 
             <div class="col s12 m6 14">
                 <div class="card-panel">
-                    <h6>Total Budget</h6>
-                    <h1>£200</h1>
+                    <h6>Budget Left</h6>
+                    <h1>£...</h1>
                 </div>
             </div>
 
             <div class="col s12 m6 14">
                 <div class="card-panel">
-                    <h6>Total Budget</h6>
-                    <h1>£200</h1>
+                    <h6>Total Transactions</h6>
+                    <h1>£...</h1>
                 </div>
             </div>
 
@@ -39,19 +39,20 @@
         </div>
 
         <ul class="z-depth-1">
+            {% for expense in expense_list %}
             <li>
                 <div class="card-panel z-depth-0 expense">
                     <div class="row">
                         <div class="col 16">
-                            <span class="title">Page Design</span>
+                            <span class="title">{{ expense.title }}</span>
                         </div>
 
                         <div class="col 13">
-                            <span class="title">£50</span>
+                            <span class="title">£{{ expense.amount }}</span>
                         </div>
 
                         <div class="col 1">
-                            <span class="title bold">Development</span>
+                            <span class="title bold">{{ expense.category.name }}</span>
                         </div>
 
                         <a href="">
@@ -60,6 +61,7 @@
                     </div>
                 </div>
             </li>
+            {% endfor %}
         </ul>
     </section>
 </div>
